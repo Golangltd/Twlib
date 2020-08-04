@@ -1,4 +1,4 @@
-package user
+package twlib_user
 
 //用户信息
 type UserInfo struct {
