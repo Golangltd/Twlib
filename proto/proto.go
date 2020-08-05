@@ -1,4 +1,4 @@
-package proto
+package twlib_proto
 
 // 主协议 == 规则
 const (

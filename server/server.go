@@ -1,4 +1,4 @@
-package server
+package twlib_server
 
 // 代理服务器地址
 const ProxyIp string = "127.0.0.1:8888"
