@@ -12,7 +12,8 @@ const (
 	GGameLoginProto         //  GGameLoginProto == 7    登录服务器协议         登录服务器主协议
 	GGameGMProto            //  GGameGMProto == 8       游戏GM管理系统
 	GGamePayProto           //  GGamePayProto == 9      游戏支付系统
-	GGameBattleProto        //  GGameBattleProto  == 10   游戏战斗系统
+	GGameBattleProto        //  GGameBattleProto  == 10 游戏战斗系统
+	GGameConfigProto        //  GGameConfigProto  == 11 获取游戏配置  其他服务器从game游戏主逻辑服务器获取数据
 )
 
 type GameProto64 struct {
