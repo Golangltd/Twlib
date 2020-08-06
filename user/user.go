@@ -9,10 +9,10 @@ type UserSt struct {
 	Coin       int64         // 金币
 	Diamond    int64         // 砖石
 	CardList   []*CardSt     // 角色拥有的卡牌
-	LatestArea int           // 上一次的最新登录的区
+	LatestArea string        // 上一次的最新登录的区   区的url：ip+port
 	ItemList   []*ItemSt     // 角色身上的道具，包括装备
 	ChannelId  int           // 渠道Id
-	ServerList []*ServerList // 整个游戏的所有区列表，从上线开始
+	ServerList []*ServerList // 整个游戏的所有区列表，从上线开始  1-30  29
 }
 
 // 游戏区的列表的状态
