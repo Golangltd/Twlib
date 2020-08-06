@@ -1,4 +1,4 @@
-package dbtable
+package twlib_dbtable
 
 // 数据库对应的表名
 const (
