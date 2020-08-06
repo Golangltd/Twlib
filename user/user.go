@@ -1,4 +1,3 @@
-
 package twlib_user
 
 // 玩家结构
@@ -7,12 +6,13 @@ type UserSt struct {
 	RoleName   string
 	RoleLev    int
 	RoleSex    int
-	Coin       int64     // 金币
-	Diamond    int64     // 砖石
-	CardList   []*CardSt // 角色拥有的卡牌
-	LatestArea int       // 上一次的最新登录的区
-	ItemList   []*ItemSt // 角色身上的道具，包括装备
-	ChannelId  int       // 渠道Id
+	Coin       int64         // 金币
+	Diamond    int64         // 砖石
+	CardList   []*CardSt     // 角色拥有的卡牌
+	LatestArea int           // 上一次的最新登录的区
+	ItemList   []*ItemSt     // 角色身上的道具，包括装备
+	ChannelId  int           // 渠道Id
+	ServerList []*ServerList // 整个游戏的所有区列表，从上线开始
 }
 
 // 游戏区的列表的状态
