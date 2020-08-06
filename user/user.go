@@ -6,12 +6,30 @@ type UserSt struct {
 	RoleName   string
 	RoleLev    int
 	RoleSex    int
-	Coin       int64             // 金币
-	Diamond    int64             // 砖石
-	CardList   []*CardSt         // 角色拥有的卡牌
-	LatestArea int               // 上一次的最新登录的区
-	ItemList   []*ItemSt         // 角色身上的道具，包括装备
-	ChannelId  int               // 渠道Id
+	Coin       int64     // 金币
+	Diamond    int64     // 砖石
+	CardList   []*CardSt // 角色拥有的卡牌
+	LatestArea int       // 上一次的最新登录的区
+	ItemList   []*ItemSt // 角色身上的道具，包括装备
+	ChannelId  int       // 渠道Id
+}
+
+// 游戏区的列表的状态
+const (
+	SDefault = iota
+	SIdle    = 1 //空闲
+	SBusy    = 2 //繁忙
+	SNew     = 3 //新服
+	SFull    = 4 //爆满
+	SLast    = 5 //最近登录的
+)
+
+// 游戏服务器列表
+type ServerList struct {
+	ServerId   int
+	ServerName string
+	Url        string
+	State      int
 }
 
 // 道具
