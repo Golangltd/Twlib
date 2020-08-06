@@ -10,4 +10,5 @@ type GetCFGameData struct {
 	Protocol  int
 	Protocol2 int
 	TableName string // 表名
+	ServerId  string // 服务器Id
 }
