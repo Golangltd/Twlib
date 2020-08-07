@@ -4,6 +4,7 @@ package twlib_user
 type UserSt struct {
 	RoleUid    int64
 	RoleName   string
+	RoleAvatar int
 	RoleLev    int
 	RoleSex    int
 	Coin       int64         // 金币
