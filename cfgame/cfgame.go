@@ -17,5 +17,6 @@ type GetCFGameData struct {
 type CFRetGameData struct {
 	Protocol  int
 	Protocol2 int
+	TableName string // 表名
 	Data      interface{}
 }
