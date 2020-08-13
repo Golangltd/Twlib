@@ -1,4 +1,4 @@
-package Chapter
+package Twlib_Chapter
 
 const (
 	ChapterInit    = iota
