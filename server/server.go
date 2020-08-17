@@ -13,5 +13,3 @@ const (
 	DBServerId      // DBServerId == 5
 	CenterServerId  // CenterServerId == 6
 )
-
-
