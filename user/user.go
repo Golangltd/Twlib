@@ -75,6 +75,7 @@ type ItemSt struct {
 
 // 道具数据
 type ItemData struct {
+	Uid      int64  // 唯一ID
 	ItemId   int
 	ItemNum  int64 // 道具的数量
 }
