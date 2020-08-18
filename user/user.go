@@ -29,34 +29,34 @@ const (
 // 道具大类型，读取对应的表
 const (
 	ItemMaxTypeInit = iota
-	ItemCommon               // ItemCommon ==  1 常规道具
-	ItemEquipment            // ItemEquipment == 2 装备
-	ItemCard                 // ItemCard  == 3 卡牌
+	ItemCommon      // ItemCommon ==  1 常规道具
+	ItemEquipment   // ItemEquipment == 2 装备
+	ItemCard        // ItemCard  == 3 卡牌
 )
 
 // 道具子类型，客户端类型
 const (
-	ItemMinTypeInit = iota
-	ICoin                // ICoin == 1   金币
-	ISilver              // ISilver == 2 银币
-    ITeamExp             // ITeamExp == 3 战队经验
-    ICardExp             // ICardExp == 4 卡牌经验
-    IEquipmentUpExp      // IEquipmentUpExp == 5 装备强化经验
-    IKindnessExp         // IKindnessExp == 6 友情点
-    IArenaScore          // IArenaScore == 7 竞技场积分
-    ITeamCoin            // ITeamCoin == 8 工会币
-    ICardBreakCoin       // ICardBreakCoin == 9 卡牌分解货币
-    IConsume             // IConsume == 10 消耗品
-    IRandCardSplinter    // IRandCardSplinter == 11 随机卡牌碎片
-    ICardSplinter        // ICardSplinter == 12  卡牌碎片
-    IRandCard            // IRandCard == 13 随机卡牌
-    ICardMagic           // ICardMagic == 14 魔法师卡牌
-    IEquipmentUp         // IEquipment == 15 装备强化道具
-    IEquipment           // IEquipment == 16 装备
-    ITreasureBox         // ITreasureBox == 17 宝箱
-    ICardDrawPaper       // ICardDrawPaper == 18 抽奖卷
-    IWand                // IWand == 19 魔杖
-    IArtifact            // IArtifact == 20 神器
+	ItemMinTypeInit   = iota
+	ICoin             // ICoin == 1   金币
+	ISilver           // ISilver == 2 银币
+	ITeamExp          // ITeamExp == 3 战队经验
+	ICardExp          // ICardExp == 4 卡牌经验
+	IEquipmentUpExp   // IEquipmentUpExp == 5 装备强化经验
+	IKindnessExp      // IKindnessExp == 6 友情点
+	IArenaScore       // IArenaScore == 7 竞技场积分
+	ITeamCoin         // ITeamCoin == 8 工会币
+	ICardBreakCoin    // ICardBreakCoin == 9 卡牌分解货币
+	IConsume          // IConsume == 10 消耗品
+	IRandCardSplinter // IRandCardSplinter == 11 随机卡牌碎片
+	ICardSplinter     // ICardSplinter == 12  卡牌碎片
+	IRandCard         // IRandCard == 13 随机卡牌
+	ICardMagic        // ICardMagic == 14 魔法师卡牌
+	IEquipmentUp      // IEquipment == 15 装备强化道具
+	IEquipment        // IEquipment == 16 装备
+	ITreasureBox      // ITreasureBox == 17 宝箱
+	ICardDrawPaper    // ICardDrawPaper == 18 抽奖卷
+	IWand             // IWand == 19 魔杖
+	IArtifact         // IArtifact == 20 神器
 )
 
 // 游戏服务器列表
@@ -69,22 +69,22 @@ type ServerList struct {
 
 // 道具
 type ItemSt struct {
-	FunctionId   int     // 功能Id
-	ItemData []*ItemData // 道具数据
+	FunctionId int         // 功能Id
+	ItemData   []*ItemData // 道具数据
 }
 
 // 道具数据
 type ItemData struct {
-	Uid      int64  // 唯一ID
-	ItemId   int
-	ItemNum  int64 // 道具的数量
+	Uid     int64 // 唯一ID
+	ItemId  int
+	ItemNum int64 // 道具的数量
 }
 
 //角色信息
 type CardSt struct {
-	CardID uint64 // 卡牌唯一ID
-	Level  int    // 卡牌等级
-	Skills map[int]*SkillInfo
+	CardID uint64             // 卡牌唯一ID
+	Level  int                // 卡牌等级
+	Skills map[int]*SkillInfo // 技能列表
 }
 
 //---------------------------------------------------------------------------
@@ -97,13 +97,22 @@ type UserInfo struct {
 
 // 角色信息
 type CardInfo struct {
-	CardID uint64 //卡牌唯一ID
-	Level  int    //卡牌等级
-	Role   string //角色ID
-	Skills map[int]*SkillInfo
+	CardID uint64             // 卡牌唯一ID
+	Level  int                // 卡牌等级
+	Role   string             // 角色ID
+	Skills []*SkillInfo // 技能列表
+	Equips *EquipSt   // 多个相同装备
 }
 
 // 技能
 type SkillInfo struct {
-	SkillID uint64
+	SkillId  int64
+	SkillLev int      // 数据操作
+}
+
+// 装备
+type EquipSt struct {
+	EquipId int // 装备Id
+	Lev     int // 等级
+	Star    int // 星级
 }
