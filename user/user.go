@@ -95,7 +95,7 @@ type UserInfo struct {
 	Cards map[int]*CardInfo // 卡牌
 }
 
-// 角色信息
+// 卡牌信息结构
 type CardInfo struct {
 	CardID     uint64       // 卡牌唯一ID
 	Level      int          // 卡牌等级
