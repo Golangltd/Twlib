@@ -101,7 +101,7 @@ type CardInfo struct {
 	Level      int          // 卡牌等级
 	Role       string       // 角色ID
 	Skills     []*SkillInfo // 技能列表
-	Equips     *EquipSt     // 多个相同装备
+	Equips     []*EquipSt   // 多个相同装备
 	BattleData uint64       // 战斗力
 	Stars       int         // 星级
 }
