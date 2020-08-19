@@ -92,22 +92,24 @@ type CardSt struct {
 type UserInfo struct {
 	ID    uint64
 	Level int
-	Cards map[int]*CardInfo //卡牌
+	Cards map[int]*CardInfo // 卡牌
 }
 
 // 角色信息
 type CardInfo struct {
-	CardID uint64             // 卡牌唯一ID
-	Level  int                // 卡牌等级
-	Role   string             // 角色ID
-	Skills []*SkillInfo // 技能列表
-	Equips *EquipSt   // 多个相同装备
+	CardID     uint64       // 卡牌唯一ID
+	Level      int          // 卡牌等级
+	Role       string       // 角色ID
+	Skills     []*SkillInfo // 技能列表
+	Equips     *EquipSt     // 多个相同装备
+	BattleData uint64       // 战斗力
+	Stars       int         // 星级
 }
 
 // 技能
 type SkillInfo struct {
 	SkillId  int64
-	SkillLev int      // 数据操作
+	SkillLev int // 数据操作
 }
 
 // 装备
