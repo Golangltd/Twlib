@@ -65,6 +65,7 @@ type ServerList struct {
 	ServerName string
 	Url        string
 	State      int
+	UserInfo   *UserSt   // 存储到数据库
 }
 
 // 道具
