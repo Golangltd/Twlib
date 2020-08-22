@@ -34,6 +34,9 @@ const (
 	ItemCard        // ItemCard  == 3 卡牌
 )
 
+// 数据操作，www.ByteEdu.Com
+
+
 // 道具子类型，客户端类型
 const (
 	ItemMinTypeInit   = iota
