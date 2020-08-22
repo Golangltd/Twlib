@@ -6,9 +6,9 @@ const (
 
 	// 道具
 	ItemTable = "gl_dj_djb"        // 道具表
-	gl_dj_djlxb = "gl_dj_djlxb"    // 道具类型表
-	gl_dj_djzlxb = "gl_dj_djzlxb"  // 道具子类型表
-	gl_dl_dlpzb = "gl_dl_dlpzb"    // 掉落配置表
+	Gl_dj_djlxb = "gl_dj_djlxb"    // 道具类型表
+	Gl_dj_djzlxb = "gl_dj_djzlxb"  // 道具子类型表
+	Gl_dl_dlpzb = "gl_dl_dlpzb"    // 掉落配置表
 
 	// 关卡
 	gl_gk_cjpzb = "gl_gk_cjpzb"    // 暂时无
@@ -78,6 +78,12 @@ func GetDbTableEnum(table string) string {
 		return Gl_gk_gwzpzb
 	case Gl_gk_gwzxb:
 		return Gl_gk_gwzxb
+	case Gl_dj_djlxb:
+		return Gl_dj_djlxb
+	case Gl_dj_djzlxb:
+		return Gl_dj_djzlxb
+	case Gl_dl_dlpzb:
+		return Gl_dl_dlpzb
 	default:
 		return ""
 	}
