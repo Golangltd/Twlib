@@ -47,7 +47,7 @@ const (
 	gl_wse_wsjyb = "gl_wse_wsjyb"
 	gl_xj_xjkcb = "gl_xj_xjkcb"
 	gl_xj_xjpzb = "gl_xj_xjpzb"
-	gl_xm_sjxmb = "gl_xm_sjxmb"
+	Gl_xm_sjxmb = "gl_xm_sjxmb"
 	gl_yj_yjpzb = "gl_yj_yjpzb"
 	gl_zb_zbb = "gl_zb_zbb"
 	gl_zw_zwpzb = "gl_zw_zwpzb"
@@ -84,6 +84,8 @@ func GetDbTableEnum(table string) string {
 		return Gl_dj_djzlxb
 	case Gl_dl_dlpzb:
 		return Gl_dl_dlpzb
+	case Gl_xm_sjxmb:
+		return Gl_xm_sjxmb
 	default:
 		return ""
 	}
