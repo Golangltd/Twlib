@@ -1,4 +1,4 @@
-package Vocation
+package twlib_Vocation
 
 type Vocation = int //职业
 // 职业
