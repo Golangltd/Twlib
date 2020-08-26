@@ -36,7 +36,6 @@ const (
 
 // 数据操作，www.ByteEdu.Com
 
-
 // 道具子类型，客户端类型
 const (
 	ItemMinTypeInit   = iota
@@ -68,7 +67,7 @@ type ServerList struct {
 	ServerName string
 	Url        string
 	State      int
-	UserInfo   *UserSt   // 存储到数据库
+	UserInfo   *UserSt // 存储到数据库
 }
 
 // 道具
@@ -101,13 +100,21 @@ type UserInfo struct {
 
 // 卡牌信息结构
 type CardInfo struct {
-	CardID     uint64       // 卡牌唯一ID
-	Level      int          // 卡牌等级
-	Role       string       // 角色ID
-	Skills     []*SkillInfo // 技能列表
-	Equips     []*EquipSt   // 多个相同装备
-	BattleData uint64       // 战斗力
-	Stars       int         // 星级
+	CardID        uint64       // 卡牌唯一ID
+	Level         int          // 卡牌等级
+	Role          string       // 角色ID
+	Skills        []*SkillInfo // 技能列表
+	Equips        []*EquipSt   // 多个相同装备
+	AttributeInfo *AttributeSt // 战斗力
+	Stars         int          // 星级
+}
+
+// 属性加成
+type AttributeSt struct {
+	BattlePower  uint64 // 战斗力
+	HPPower      uint64 // 血量
+	AttackPower  uint64 // 攻击力
+	DefensePower uint64 // 防御力
 }
 
 // 技能
