@@ -9,7 +9,7 @@ type UserSt struct {
 	RoleSex    int
 	Coin       int64         // 金币
 	Diamond    int64         // 砖石
-	CardList   []*CardSt     // 角色拥有的卡牌
+	CardList   []*CardInfo   // 角色拥有的卡牌
 	LatestArea string        // 上一次的最新登录的区   区的url：ip+port
 	ItemList   []*ItemSt     // 角色身上的道具，包括装备
 	ChannelId  int           // 渠道Id
@@ -81,13 +81,6 @@ type ItemData struct {
 	Uid     int64 // 唯一ID
 	ItemId  int
 	ItemNum int64 // 道具的数量
-}
-
-//角色信息
-type CardSt struct {
-	CardID uint64             // 卡牌唯一ID
-	Level  int                // 卡牌等级
-	Skills map[int]*SkillInfo // 技能列表
 }
 
 //---------------------------------------------------------------------------
