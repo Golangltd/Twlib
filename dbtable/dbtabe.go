@@ -31,7 +31,7 @@ const (
 	// 角色
 	RoleTable = "gl_js_jsb"        // 角色表
 	gl_js_jssxxs = "gl_js_jssxxs"  //
-	gl_ls_lssjb = "gl_ls_lssjb"
+	Gl_ls_lssjb = "gl_ls_lssjb"    // 离散数据表
 	gl_mz_mzdzpzxsb = "gl_mz_mzdzpzxsb"
 	gl_mz_mztxsxc = "gl_mz_mztxsxc"
 	gl_pz_pzjjpzb = "gl_pz_pzjjpzb"
@@ -86,6 +86,8 @@ func GetDbTableEnum(table string) string {
 		return Gl_dl_dlpzb
 	case Gl_xm_sjxmb:
 		return Gl_xm_sjxmb
+	case Gl_ls_lssjb:
+		return Gl_ls_lssjb
 	default:
 		return ""
 	}
