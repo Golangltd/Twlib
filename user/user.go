@@ -83,6 +83,15 @@ type ItemData struct {
 	ItemNum int64 // 道具的数量
 }
 
+// 数据库 存储道具的结构
+type ItemSaveSt struct {
+	AccountId  uint64
+	RoleId     uint64
+	FunctionId int // 功能Id
+	ItemId     int
+	ItemNum    int64 // 道具的数量
+}
+
 //---------------------------------------------------------------------------
 //用户信息
 type UserInfo struct {
