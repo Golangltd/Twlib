@@ -14,6 +14,7 @@ const (
 	GGamePayProto           //  GGamePayProto == 9      游戏支付系统
 	GGameBattleProto        //  GGameBattleProto  == 10 游戏战斗系统
 	GGameConfigProto        //  GGameConfigProto  == 11 获取游戏配置  其他服务器从game游戏主逻辑服务器获取数据
+	GGameCenterProto        //  GGameCenterProto  == 12 中心服务器系统
 )
 
 type GameProto64 struct {
