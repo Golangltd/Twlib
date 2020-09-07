@@ -109,6 +109,7 @@ type CardInfo struct {
 	Equips        []*EquipSt   // 多个相同装备
 	AttributeInfo *AttributeSt // 战斗力
 	Stars         int          // 星级
+	IsShow        bool         // 图鉴系统，false:没有打开过图鉴系统；true:打开过图鉴系统
 }
 
 // 属性加成
