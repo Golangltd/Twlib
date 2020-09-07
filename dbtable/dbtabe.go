@@ -52,11 +52,20 @@ const (
 	gl_zb_zbb = "gl_zb_zbb"
 	gl_zw_zwpzb = "gl_zw_zwpzb"
 	Gl_mg_mgc = "gl_mg_mgc"     // 敏感词表
+
+	// 图鉴
+	Gl_tj_yxkptjb = "gl_tj_yxkptjb"  // 英雄卡牌图鉴表
+	Gl_tj_yxtjjhb = "gl_tj_yxtjjhb"  // 英雄图鉴激活表
+
 )
 
 // 获取对应宏对应的表名
 func GetDbTableEnum(table string) string {
 	switch table {
+	case Gl_tj_yxtjjhb:   // 英雄卡牌图鉴表
+		return Gl_tj_yxtjjhb
+	case Gl_tj_yxkptjb:   // 英雄卡牌图鉴表
+		return Gl_tj_yxkptjb
 	case Gl_mg_mgc:   // 敏感词表
 		return Gl_mg_mgc
 	case RoleTable:
