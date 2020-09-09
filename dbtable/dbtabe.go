@@ -105,3 +105,4 @@ func GetDbTableEnum(table string) string {
 	}
 	return ""
 }
+

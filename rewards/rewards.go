@@ -6,3 +6,8 @@ type RewardSt struct {
 	ItemType  int
 	RewardNum int
 }
+
+// 获取奖励列表
+func GetRewardInfo()  {
+
+}
