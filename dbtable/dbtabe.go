@@ -17,8 +17,8 @@ const (
 	Gl_gk_gkpzb = "gl_gk_gkpzb"    // 关卡配置表
 	Gl_gk_gwzpzb = "gl_gk_gwzpzb"  // 关卡总配置表
 	Gl_gk_gwzxb = "gl_gk_gwzxb"    // 怪物属性表
-	gl_gk_zjbxpzb = "gl_gk_zjbxpzb"//
-	gl_gk_zjpzb = "gl_gk_zjpzb"    //
+	Gl_gk_zjbxpzb = "gl_gk_zjbxpzb"//
+	Gl_gk_zjpzb = "gl_gk_zjpzb"    //
 
 	// 技能
 	gl_gn_gnkqpzb = "gl_gn_gnkqpzb"//
@@ -62,6 +62,10 @@ const (
 // 获取对应宏对应的表名
 func GetDbTableEnum(table string) string {
 	switch table {
+	case Gl_gk_zjbxpzb:
+		return Gl_gk_zjbxpzb
+	case Gl_gk_zjpzb:   // 关卡配置表
+		return Gl_gk_zjpzb
 	case Gl_tj_yxtjjhb:   // 英雄卡牌图鉴表
 		return Gl_tj_yxtjjhb
 	case Gl_tj_yxkptjb:   // 英雄卡牌图鉴表
