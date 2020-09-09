@@ -7,8 +7,8 @@ type MailSt struct {
 	SenderId	uint64			// 发送人ID
 	Title 		string 			// 标题
 	Description string 			// 内容
-	SendTime 	uint64 			// 发送时间戳
-	ExpireTime	uint64			// 过期时间戳
+	SendTime 	int64 			// 发送时间戳
+	ExpireTime	int64			// 过期时间戳
 	BTemplate 	bool 			// 是否模板邮件
 	BRead 		bool 			// 是否阅读
 	BGetAtt 	bool 			// 是否领取了附件
