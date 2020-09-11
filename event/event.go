@@ -1,15 +1,15 @@
 package twlib_event
 
-// 活动结构体
-type EventSt struct {
+// 玩家活动数据结构体
+type UserEventSt struct {
 	EventId     uint64         // 活动ID
 	ConfigId    int            // 活动配置档ID
 	CompleteNum int            // 完成次数
 	BGetReward  bool           // 是否领取了奖励
-	Condition   []*ConditionSt // 活动条件
+	Conditions   []*ConditionSt // 活动条件
 }
 
-// 活动条件
+// 活动条件数据结构体
 type ConditionSt struct {
 	Type     int // 条件类型
 	TypeParm int // 条件参数
