@@ -44,7 +44,7 @@ const (
 	gl_tj_yxkptjb = "gl_tj_yxkptjb"
 	gl_ts_tspzb = "gl_ts_tspzb"
 	gl_wb_wbb = "gl_wb_wbb"
-	gl_wse_wsjyb = "gl_wse_wsjyb"
+	Gl_wse_wsjyb = "gl_wse_wsjyb"
 	gl_xj_xjkcb = "gl_xj_xjkcb"
 	Gl_xj_xjpzb = "gl_xj_xjpzb"
 	Gl_xm_sjxmb = "gl_xm_sjxmb"
@@ -65,6 +65,8 @@ const (
 // 获取对应宏对应的表名
 func GetDbTableEnum(table string) string {
 	switch table {
+	case Gl_wse_wsjyb:
+		return Gl_wse_wsjyb
 	case Gl_Activity:
 		return Gl_Activity
 	case Gl_xj_xjpzb:

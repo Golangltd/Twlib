@@ -4,8 +4,17 @@ package twlib_common
 const (
 	ErrorInit = iota
 	ErrorMessageProto2   // ErrorMessageProto2 == 1 服务器发送给游戏客户端
+	ErrorLogProto2       // ErrorLogProto2 == 2 客户端发给日志服务器，日志服务器记录
 )
-
+//--------------------------------------------------------------------------------------------
+// ErrorLogProto2 == 2 客户端发给日志服务器，日志服务器记录
+type ErrorLog struct {
+	Protocol  int   // 主协议 4
+	Protocol2 int
+	CodeInfo   string // 代码文件名称，行数等
+}
+//--------------------------------------------------------------------------------------------
+// ErrorMessageProto2 == 1 服务器发送给游戏客户端
 type ErrorMessage struct {
 	Protocol  int
 	Protocol2 int
