@@ -128,7 +128,9 @@ type AttributeSt struct {
 // 技能
 type SkillInfo struct {
 	SkillId  int64
-	SkillLev int // 数据操作
+	SkillLev int  // 数据操作
+	IsUser   bool // 是否使用
+	Position int  // 0 1 2
 }
 
 // 装备
