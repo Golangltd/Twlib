@@ -65,6 +65,11 @@ const (
 	ICardDrawPaper    // ICardDrawPaper == 18 抽奖卷
 	IWand             // IWand == 19 魔杖
 	IArtifact         // IArtifact == 20 神器
+	IShowMapChip      // IShowMapChip == 21 图鉴碎片
+	ISQChip           // ISQChip == 22 神器碎片
+	IZSChip           // IZSChip == 23 杖身碎片
+	IZXMaterial       // IZXMaterial == 24 杖心材料
+	IMZDrawing        // IMZDrawing == 25 魔杖图纸
 )
 
 // 游戏服务器列表
@@ -129,8 +134,7 @@ type AttributeSt struct {
 type SkillInfo struct {
 	SkillId  int64
 	SkillLev int  // 数据操作
-	IsUser   bool // 是否使用
-	Position int  // 0 1 2
+	Position int  // 0 1 2  -1:没有使用
 }
 
 // 装备
