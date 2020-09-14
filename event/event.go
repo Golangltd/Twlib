@@ -4,6 +4,7 @@ package twlib_event
 type EventSt struct {
 	EventId   uint64 // 活动ID
 	ConfigId  int    // 配置表ID
+	State     int    // 活动状态
 	LoopNum   int    // 循环类活动批次号，非循环类活动默认0
 	BeginTime int64  // 开启时间
 	EndTime   int64  // 结束时间
