@@ -30,6 +30,9 @@ type UserEventSt struct {
 	ConfigId    int            // 活动配置档ID
 	LoopNum     int            // 循环类活动批次号，非循环类活动默认0
 	CompleteNum int            // 完成次数
+	BeginTime   int64          // 开启时间(开启类型-相对创角时间类型有用)
+	EndTime     int64          // 结束时间(开启类型-相对创角时间类型有用)
+	CloseTime   int64          // 关闭时间(开启类型-相对创角时间类型有用)
 	BGetReward  bool           // 是否领取了奖励
 	Conditions  []*ConditionSt // 活动条件
 }
