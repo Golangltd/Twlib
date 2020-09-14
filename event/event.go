@@ -28,6 +28,7 @@ const (
 type UserEventSt struct {
 	EventId     uint64         // 活动ID
 	ConfigId    int            // 活动配置档ID
+	LoopNum     int            // 循环类活动批次号，非循环类活动默认0
 	CompleteNum int            // 完成次数
 	BGetReward  bool           // 是否领取了奖励
 	Conditions  []*ConditionSt // 活动条件
