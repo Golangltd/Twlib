@@ -60,11 +60,18 @@ const (
 	// 获取活动
 	Gl_Activity = "gl_yy_yyhdzb"     // 活动配置表
 
+	Gl_School = "gl_xy_xypzb"    // 学院配置表
+	Gl_SchoolRool = "gl_xjpzb"
+
 )
 
 // 获取对应宏对应的表名
 func GetDbTableEnum(table string) string {
 	switch table {
+	case Gl_SchoolRool:
+		return Gl_SchoolRool
+	case Gl_School:
+		return Gl_School
 	case Gl_wse_wsjyb:
 		return Gl_wse_wsjyb
 	case Gl_Activity:
