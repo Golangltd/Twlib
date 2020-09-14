@@ -61,7 +61,7 @@ const (
 	Gl_Activity = "gl_yy_yyhdzb"     // 活动配置表
 
 	Gl_School = "gl_xy_xypzb"    // 学院配置表
-	Gl_SchoolRool = "gl_xjpzb"
+	Gl_SchoolRool = "gl_xj_xjpzb"
 
 )
 
@@ -76,8 +76,6 @@ func GetDbTableEnum(table string) string {
 		return Gl_wse_wsjyb
 	case Gl_Activity:
 		return Gl_Activity
-	case Gl_xj_xjpzb:
-		return Gl_xj_xjpzb
 	case Gl_gk_zjbxpzb:
 		return Gl_gk_zjbxpzb
 	case Gl_gk_zjpzb:   // 关卡配置表
