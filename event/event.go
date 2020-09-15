@@ -14,14 +14,14 @@ type EventSt struct {
 // 活动条件类型
 const (
 	ConditionTypeRechargeSingle   = 10000 // 单笔充值金额
-	ConditionTypeRechargeSum      = 10002 // 累计充值金额
-	ConditionTypeRechargeSpecify  = 10003 // 指定充值ID
-	ConditionTypeLevelUser        = 10004 // 玩家等级
-	ConditionTypeLevelVip         = 10005 // VIP等级
-	ConditionTypeLoginContinueDay = 10006 // 连续登录天数
-	ConditionTypeLoginSumDay      = 10007 // 累计登录天数
-	ConditionTypeRechargeSumDay   = 10008 // 累计充值天数
-	ConditionTypeConsumeSum       = 10009 // 累计消费钻石数量
+	ConditionTypeRechargeSum      = 10001 // 累计充值金额
+	ConditionTypeRechargeSpecify  = 10002 // 指定充值ID
+	ConditionTypeLevelUser        = 10003 // 玩家等级
+	ConditionTypeLevelVip         = 10004 // VIP等级
+	ConditionTypeLoginContinueDay = 10005 // 连续登录天数
+	ConditionTypeLoginSumDay      = 10006 // 累计登录天数
+	ConditionTypeRechargeSumDay   = 10007 // 累计充值天数
+	ConditionTypeConsumeSum       = 10008 // 累计消费钻石数量
 )
 
 // 玩家的活动数据结构体
@@ -39,7 +39,8 @@ type UserEventSt struct {
 
 // 玩家的活动条件数据结构体
 type ConditionSt struct {
-	Type     int // 条件类型
-	TypeParm int // 条件参数
-	Target   int // 达成值
+	Type       int         // 条件类型
+	TypeParm   int         // 条件参数
+	Target     int         // 条件达成值
+	TargetParm interface{} // 达成值辅助参数(如连续登录天数条件，该值存储的是玩家上次登录的时间戳)
 }
