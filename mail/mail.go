@@ -17,7 +17,7 @@ type MailSt struct {
 
 // 附件结构体
 type ItemDataSt struct {
-	ItemId  	int		// 道具ID
 	ItemType 	int		// 道具类型
+	ItemId  	int		// 道具ID
 	ItemNum 	int64 	// 道具数量
 }

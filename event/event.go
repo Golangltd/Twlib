@@ -24,6 +24,12 @@ const (
 	ConditionTypeConsumeSum       = 10008 // 累计消费钻石数量
 )
 
+// 初始玩家活动时候需要的玩家数据
+type UserEventInitData struct {
+	RoleLev int // 玩家等级
+	ViPLev  int // 玩家vip等级
+}
+
 // 玩家的活动数据结构体
 type UserEventSt struct {
 	EventId     uint64         // 活动ID
