@@ -2,27 +2,27 @@ package twlib_user
 
 // 玩家结构
 type UserSt struct {
-	RoleUid    int64
-	RoleName   string
-	RoleAvatar int
-	RoleLev    int
-	RoleSex    int
-	RoleExp    int           	// 巫师经验
-	Coin       int64         	// 金币
-	Diamond    int64         	// 砖石
-	CardList   []*CardInfo   	// 角色拥有的卡牌
-	LatestArea string        	// 上一次的最新登录的区   区的url：ip+port
-	ItemList   []*ItemSt     	// 角色身上的道具，包括装备
-	ChannelId  int           	// 渠道Id
-	ServerList []*ServerList    // 整个游戏的所有区列表，从上线开始  1-30  29 数据更新操作
-	ChapterInfo *UserChapterInfo// 当前章节+当前关卡
+	RoleUid     int64
+	RoleName    string
+	RoleAvatar  int
+	RoleLev     int
+	RoleSex     int
+	RoleExp     int              // 巫师经验
+	Coin        int64            // 金币
+	Diamond     int64            // 砖石
+	CardList    []*CardInfo      // 角色拥有的卡牌
+	LatestArea  string           // 上一次的最新登录的区   区的url：ip+port
+	ItemList    []*ItemSt        // 背包里的道具
+	EquipData   *EquipData       // 背包里的的装备道具
+	ChannelId   int              // 渠道Id
+	ServerList  []*ServerList    // 整个游戏的所有区列表，从上线开始  1-30  29 数据更新操作
+	ChapterInfo *UserChapterInfo // 当前章节+当前关卡
 }
 
 type UserChapterInfo struct {
 	ChapterId int
 	RoundId   int
 }
-
 
 // 游戏区的列表的状态
 const (
@@ -116,7 +116,7 @@ type CardInfo struct {
 	CardID        uint64       // 卡牌唯一ID
 	Level         int          // 卡牌等级
 	Skills        []*SkillInfo // 技能列表
-	Equips        []*EquipSt   // 多个相同装备
+	Equips        []*EquipSt   // 卡牌的装备
 	AttributeInfo *AttributeSt // 战斗力
 	Stars         int          // 星级
 	IsShow        bool         // 图鉴系统，false:没有打开过图鉴系统；true:打开过图鉴系统
@@ -133,13 +133,23 @@ type AttributeSt struct {
 // 技能
 type SkillInfo struct {
 	SkillId  int64
-	SkillLev int  // 数据操作
-	Position int  // 0 1 2  -1:没有使用
+	SkillLev int // 数据操作
+	Position int // 0 1 2  -1:没有使用
 }
 
-// 装备
+// 玩家装备数据
+type EquipData struct {
+	FunctionId int        // 功能ID 固定值 101
+	EquipSts   []*EquipSt // 装备列表
+
+}
+
+// 装备结构体
 type EquipSt struct {
-	EquipId int // 装备Id
-	Lev     int // 等级
-	Star    int // 星级
+	UID      int64 // 唯一ID
+	ConfID   int   // 配置表ID
+	Star     int   // 装备星级
+	Camp     int   // 属性加成的阵营
+	CampRate int   // 阵营加成比例百分比
+	Num      int   // 数量
 }
