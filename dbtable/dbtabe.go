@@ -117,6 +117,8 @@ func GetDbTableEnum(table string) string {
 		return Gl_xm_sjxmb
 	case Gl_ls_lssjb:
 		return Gl_ls_lssjb
+	case Gl_zb_zbb:
+		return Gl_zb_zbb
 	default:
 		return ""
 	}
