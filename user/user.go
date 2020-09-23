@@ -16,6 +16,7 @@ type UserSt struct {
 	ChannelId  int           	// 渠道Id
 	ServerList []*ServerList    // 整个游戏的所有区列表，从上线开始  1-30  29 数据更新操作
 	ChapterInfo *UserChapterInfo// 当前章节+当前关卡
+	BattlePower uint64          // 战斗力
 }
 
 type UserChapterInfo struct {

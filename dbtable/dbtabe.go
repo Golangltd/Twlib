@@ -1,7 +1,6 @@
 package twlib_dbtable
 
 // 数据库对应的表名
-
 const (
 
 	// 道具
@@ -60,9 +59,8 @@ const (
 	// 获取活动
 	Gl_Activity = "gl_yy_yyhdzb"     // 活动配置表
 
-	Gl_School = "gl_xy_xypzb"    // 学院配置表
+	Gl_School = "gl_xy_xypzb"        // 学院配置表
 	Gl_SchoolRool = "gl_xj_xjpzb"
-
 )
 
 // 获取对应宏对应的表名
