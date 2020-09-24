@@ -1,7 +1,5 @@
 package twlib_user
 
-import "go/ast"
-
 // 玩家结构
 type UserSt struct {
 	RoleUid     int64
