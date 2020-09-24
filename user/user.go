@@ -1,5 +1,7 @@
 package twlib_user
 
+import "go/ast"
+
 // 玩家结构
 type UserSt struct {
 	RoleUid     int64
@@ -152,4 +154,5 @@ type EquipSt struct {
 	Camp     int   // 属性加成的阵营
 	CampRate int   // 阵营加成比例百分比
 	Num      int   // 数量
+	Exp      int   // 当前强化经验
 }
