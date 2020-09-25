@@ -153,4 +153,5 @@ type EquipSt struct {
 	CampRate int   // 阵营加成比例百分比
 	Num      int   // 数量
 	Exp      int   // 当前强化经验
+	Power    int   // 评分(战力)
 }
