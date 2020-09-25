@@ -2,21 +2,39 @@ package twlib_user
 
 // 玩家结构
 type UserSt struct {
-	RoleUid     int64
-	RoleName    string
-	RoleAvatar  int
-	RoleLev     int
-	RoleSex     int
-	RoleExp     int              // 巫师经验
-	Coin        int64            // 金币
-	Diamond     int64            // 砖石
-	CardList    []*CardInfo      // 角色拥有的卡牌
-	LatestArea  string           // 上一次的最新登录的区   区的url：ip+port
-	ItemList    []*ItemSt        // 背包里的道具
-	EquipData   *EquipData       // 背包里的的装备道具
-	ChannelId   int              // 渠道Id
-	ServerList  []*ServerList    // 整个游戏的所有区列表，从上线开始  1-30  29 数据更新操作
-	ChapterInfo *UserChapterInfo // 当前章节+当前关卡
+	RoleUid             int64 //可用作学号
+	RoleName            string
+	RoleAvatar          int
+	RoleLev             int
+	RoleSex             int
+	RoleExp             int                  // 巫师经验
+	Coin                int64                // 金币
+	Diamond             int64                // 砖石
+	TotalPower          int                  //总战力
+	Association         string               //协会
+	CardList            []*CardInfo          // 角色拥有的卡牌
+	LatestArea          string               // 上一次的最新登录的区   区的url：ip+port
+	ItemList            []*ItemSt            // 背包里的道具
+	EquipData           *EquipData           // 背包里的的装备道具
+	ChannelId           int                  // 渠道Id
+	ServerList          []*ServerList        // 整个游戏的所有区列表，从上线开始  1-30  29 数据更新操作
+	ChapterInfo         *UserChapterInfo     // 当前章节+当前关卡
+	ClearanceDuplicates map[int]bool         //通关副本
+	CollegesInfo        map[int]*CollegeInfo //学院信息
+}
+
+//学院信息
+type CollegeInfo struct {
+	CollegeID  int          //学院ID (通过学院ID就能已知等级)
+	MapTalents []*MapTalent //图鉴天赋列表
+}
+
+//图鉴天赋
+type MapTalent struct {
+	MapID          int  //图鉴ID
+	TalentLevel    int  //天赋等级
+	CurrentQuality int  //品质
+	IsGraduate     bool //课程是否毕业
 }
 
 type UserChapterInfo struct {
