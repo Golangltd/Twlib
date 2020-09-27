@@ -30,6 +30,8 @@ type CollegeInfo struct {
 	MapTalents []*MapTalent //图鉴天赋列表
 }
 
+
+
 //评级信息
 type GradeInfo struct {
 	SRLevel  int //学籍等级
