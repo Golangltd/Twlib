@@ -23,3 +23,5 @@ func (m *CollegeInfo) SortMapTalent() {
 		}
 	}
 }
+
+

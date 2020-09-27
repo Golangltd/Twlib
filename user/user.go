@@ -36,6 +36,15 @@ func (m *UserSt) UpdateTotalPower(power int) {
 	m.TotalPower = power
 }
 
+//学院升级处理
+//pastCollegeID:过去的学院ID upgradedCollegeID:当前的学院ID
+func (m *UserSt) UpgradeHandle(pastCollegeID int, upgradedCollegeID int) {
+	collegeInfo := m.CollegesInfo[pastCollegeID]
+	collegeInfo.CollegeID = upgradedCollegeID
+	delete(m.CollegesInfo, pastCollegeID)
+	m.CollegesInfo[upgradedCollegeID] = collegeInfo
+}
+
 // 游戏区的列表的状态
 const (
 	SDefault = iota
