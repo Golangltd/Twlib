@@ -20,8 +20,8 @@ const (
 	Gl_gk_zjpzb   = "gl_gk_zjpzb"   //
 
 	// 技能
-	gl_gn_gnkqpzb = "gl_gn_gnkqpzb" //
-	gl_gn_gntjlxb = "gl_gn_gntjlxb" //
+	Gl_gn_gnkqpzb = "gl_gn_gnkqpzb" //
+	Gl_gn_gntjlxb = "gl_gn_gntjlxb" //
 	SkillTable1   = "gl_jn_jncfb"   // 技能触发表
 	SkillTable2   = "gl_jn_jnewmbb" // 技能额外目标
 	SkillTable3   = "gl_jn_jntsxgb" // 技能特殊效果
@@ -59,17 +59,17 @@ const (
 	// 获取活动
 	Gl_Activity = "gl_yy_yyhdzb" // 活动配置表
 
-<<<<<<< HEAD
 	Gl_School = "gl_xy_xypzb"        // 学院配置表
-=======
-	Gl_School     = "gl_xy_xypzb" // 学院配置表
->>>>>>> a21e00d409ac783a23039615072d83c0a408472b
 	Gl_SchoolRool = "gl_xj_xjpzb"
 )
 
 // 获取对应宏对应的表名
 func GetDbTableEnum(table string) string {
 	switch table {
+	case Gl_gn_gnkqpzb:
+		return Gl_gn_gnkqpzb
+	case Gl_gn_gntjlxb:
+		return Gl_gn_gntjlxb
 	case Gl_SchoolRool:
 		return Gl_SchoolRool
 	case Gl_School:
