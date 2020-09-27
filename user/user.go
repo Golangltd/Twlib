@@ -18,37 +18,21 @@ type UserSt struct {
 	EquipData           *EquipData           // 背包里的的装备道具
 	ChannelId           int                  // 渠道Id
 	ServerList          []*ServerList        // 整个游戏的所有区列表，从上线开始  1-30  29 数据更新操作
-	ChapterInfo         *UserChapterInfo     // 当前章节+当前关卡
+	ChapterInfo         *ChapterInfo         // 当前章节+当前关卡
 	ClearanceDuplicates map[int]bool         //通关副本
 	CollegesInfo        map[int]*CollegeInfo //学院信息
 	GradeInfo           *GradeInfo           //评级信息
 }
 
-//学院信息
-type CollegeInfo struct {
-	CollegeID  int          //学院ID (通过学院ID就能已知等级)
-	MapTalents []*MapTalent //图鉴天赋列表
+//updateLV: 更新的等级 nameText(学籍关联的文本)
+func (m *UserSt) UpdateGradeInfo(updateLV int, nameText int) {
+	m.RoleExp = 0 //升级之后经验置为0
+	m.GradeInfo.UpdateGradeInfo(updateLV, nameText)
 }
 
-
-
-//评级信息
-type GradeInfo struct {
-	SRLevel  int //学籍等级
-	SRLvText int //学籍等级关联的显示文本
-}
-
-//图鉴天赋
-type MapTalent struct {
-	MapID          int  //图鉴ID
-	TalentLevel    int  //天赋等级
-	CurrentQuality int  //品质
-	IsGraduate     bool //课程是否毕业
-}
-
-type UserChapterInfo struct {
-	ChapterId int
-	RoundId   int
+//power:战斗力
+func (m *UserSt) UpdateTotalPower(power int) {
+	m.TotalPower = power
 }
 
 // 游戏区的列表的状态
