@@ -19,9 +19,10 @@ type UserSt struct {
 	ChannelId           int                  // 渠道Id
 	ServerList          []*ServerList        // 整个游戏的所有区列表，从上线开始  1-30  29 数据更新操作
 	ChapterInfo         *UserChapterInfo     // 当前章节+当前关卡
-	ClearanceDuplicates map[int]bool         //通关副本
-	CollegesInfo        map[int]*CollegeInfo //学院信息
-	GradeInfo           *GradeInfo           //评级信息
+	ClearanceDuplicates map[int]bool         // 通关副本
+	CollegesInfo        map[int]*CollegeInfo // 学院信息
+	GradeInfo           *GradeInfo           // 评级信息
+	RegisterTime        int64                // 玩家注册角色时间
 }
 
 //学院信息
