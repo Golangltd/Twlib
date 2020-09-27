@@ -21,6 +21,3 @@ type ErrorMessage struct {
 	Code       string    // 错误码
 	Desc       string    // 错误提示
 }
-
-
-
