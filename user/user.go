@@ -21,12 +21,19 @@ type UserSt struct {
 	ChapterInfo         *UserChapterInfo     // 当前章节+当前关卡
 	ClearanceDuplicates map[int]bool         //通关副本
 	CollegesInfo        map[int]*CollegeInfo //学院信息
+	GradeInfo           *GradeInfo           //评级信息
 }
 
 //学院信息
 type CollegeInfo struct {
 	CollegeID  int          //学院ID (通过学院ID就能已知等级)
 	MapTalents []*MapTalent //图鉴天赋列表
+}
+
+//评级信息
+type GradeInfo struct {
+	SRLevel  int //学籍等级
+	SRLvText int //学籍等级关联的显示文本
 }
 
 //图鉴天赋
