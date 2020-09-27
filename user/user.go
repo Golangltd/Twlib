@@ -22,6 +22,7 @@ type UserSt struct {
 	ClearanceDuplicates map[int]bool         //通关副本
 	CollegesInfo        map[int]*CollegeInfo //学院信息
 	GradeInfo           *GradeInfo           //评级信息
+	RegisterTime        int64                // 玩家注册角色时间
 }
 
 //updateLV: 更新的等级 nameText(学籍关联的文本)
