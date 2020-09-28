@@ -134,7 +134,8 @@ type UserInfo struct {
 
 // 卡牌信息结构
 type CardInfo struct {
-	CardID        uint64       // 卡牌唯一ID
+	CardUid       uint64       // 数据库唯一Id
+	CardID        uint64       // 卡牌ID
 	Level         int          // 卡牌等级
 	Skills        []*SkillInfo // 技能列表
 	Equips        []*EquipSt   // 卡牌的装备
