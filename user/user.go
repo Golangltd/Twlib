@@ -2,26 +2,47 @@ package twlib_user
 
 // 玩家结构
 type UserSt struct {
-	RoleUid     int64
-	RoleName    string
-	RoleAvatar  int
-	RoleLev     int
-	RoleSex     int
-	RoleExp     int              // 巫师经验
-	Coin        int64            // 金币
-	Diamond     int64            // 砖石
-	CardList    []*CardInfo      // 角色拥有的卡牌
-	LatestArea  string           // 上一次的最新登录的区   区的url：ip+port
-	ItemList    []*ItemSt        // 背包里的道具
-	EquipData   *EquipData       // 背包里的的装备道具
-	ChannelId   int              // 渠道Id
-	ServerList  []*ServerList    // 整个游戏的所有区列表，从上线开始  1-30  29 数据更新操作
-	ChapterInfo *UserChapterInfo // 当前章节+当前关卡
+	RoleUid             int64 //可用作学号
+	RoleName            string
+	RoleAvatar          int
+	RoleLev             int
+	RoleSex             int
+	RoleExp             int                  // 巫师经验
+	Coin                int64                // 金币
+	Diamond             int64                // 砖石
+	TotalPower          int                  //总战力
+	Association         string               //协会
+	CardList            []*CardInfo          // 角色拥有的卡牌
+	LatestArea          string               // 上一次的最新登录的区   区的url：ip+port
+	ItemList            []*ItemSt            // 背包里的道具
+	EquipData           *EquipData           // 背包里的的装备道具
+	ChannelId           int                  // 渠道Id
+	ServerList          []*ServerList        // 整个游戏的所有区列表，从上线开始  1-30  29 数据更新操作
+	ChapterInfo         *ChapterInfo         // 当前章节+当前关卡
+	ClearanceDuplicates map[int]bool         //通关副本
+	CollegesInfo        map[int]*CollegeInfo //学院信息
+	GradeInfo           *GradeInfo           //评级信息
+	RegisterTime        int64                // 玩家注册角色时间
 }
 
-type UserChapterInfo struct {
-	ChapterId int
-	RoundId   int
+//updateLV: 更新的等级 nameText(学籍关联的文本)
+func (m *UserSt) UpdateGradeInfo(updateLV int, nameText int) {
+	m.RoleExp = 0 //升级之后经验置为0
+	m.GradeInfo.UpdateGradeInfo(updateLV, nameText)
+}
+
+//power:战斗力
+func (m *UserSt) UpdateTotalPower(power int) {
+	m.TotalPower = power
+}
+
+//学院升级处理
+//pastCollegeID:过去的学院ID upgradedCollegeID:当前的学院ID
+func (m *UserSt) UpgradeHandle(pastCollegeID int, upgradedCollegeID int) {
+	collegeInfo := m.CollegesInfo[pastCollegeID]
+	collegeInfo.CollegeID = upgradedCollegeID
+	delete(m.CollegesInfo, pastCollegeID)
+	m.CollegesInfo[upgradedCollegeID] = collegeInfo
 }
 
 // 游戏区的列表的状态
@@ -113,7 +134,8 @@ type UserInfo struct {
 
 // 卡牌信息结构
 type CardInfo struct {
-	CardID        uint64       // 卡牌唯一ID
+	CardUid       uint64       // 数据库唯一Id
+	CardID        uint64       // 卡牌ID
 	Level         int          // 卡牌等级
 	Skills        []*SkillInfo // 技能列表
 	Equips        []*EquipSt   // 卡牌的装备
