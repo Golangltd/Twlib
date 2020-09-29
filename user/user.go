@@ -2,27 +2,27 @@ package twlib_user
 
 // 玩家结构
 type UserSt struct {
-	RoleUid             int64                `db:"roleuid"` //可用作学号
-	RoleName            string               `db:"name"`    //角色名字
-	RoleAvatar          int                  `db:"avatar"`  //角色头像
-	RoleLev             int                  `db:"lev"`     //角色等级
-	RoleSex             int                  `db:"sex"`     //角色性别
+	RoleUid             int64                //可用作学号
+	RoleName            string               //角色名字
+	RoleAvatar          int                  //角色头像
+	RoleLev             int                  //角色等级
+	RoleSex             int                  //角色性别
 	RoleExp             int                  // 巫师经验
-	Coin                int64                `db:"coin"`    // 金币
-	Diamond             int64                `db:"diamond"` // 砖石
+	Coin                int64                // 金币
+	Diamond             int64                // 砖石
 	TotalPower          int                  //总战力
 	Association         string               //协会
 	CardList            []*CardInfo          // 角色拥有的卡牌
 	LatestArea          string               // 上一次的最新登录的区   区的url：ip+port
 	ItemList            []*ItemSt            // 背包里的道具
 	EquipData           *EquipData           // 背包里的的装备道具
-	ChannelId           int                  `db:"channelid"` // 渠道Id
+	ChannelId           int                  // 渠道Id
 	ServerList          []*ServerList        // 整个游戏的所有区列表，从上线开始  1-30  29 数据更新操作
 	ChapterInfo         *ChapterInfo         // 当前章节+当前关卡
 	ClearanceDuplicates map[int]bool         //通关副本
 	CollegesInfo        map[int]*CollegeInfo //学院信息
 	GradeInfo           *GradeInfo           //评级信息
-	RegisterTime        int64                `db:"creattime"` // 玩家注册角色时间
+	RegisterTime        int64                // 玩家注册角色时间
 }
 
 //updateLV: 更新的等级 nameText(学籍关联的文本)
