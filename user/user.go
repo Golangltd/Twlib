@@ -2,11 +2,11 @@ package twlib_user
 
 // 玩家结构
 type UserSt struct {
-	RoleUid             int64 //可用作学号
-	RoleName            string
-	RoleAvatar          int
-	RoleLev             int
-	RoleSex             int
+	RoleUid             int64                //可用作学号
+	RoleName            string               //角色名字
+	RoleAvatar          int                  //角色头像
+	RoleLev             int                  //角色等级
+	RoleSex             int                  //角色性别
 	RoleExp             int                  // 巫师经验
 	Coin                int64                // 金币
 	Diamond             int64                // 砖石
