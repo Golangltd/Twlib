@@ -10,18 +10,19 @@ type UserSt struct {
 	RoleExp             int                  // 巫师经验
 	Coin                int64                // 金币
 	Diamond             int64                // 砖石
-	TotalPower          int                  //总战力
-	Association         string               //协会
+	TotalPower          int                  // 总战力
+	Association         string               // 协会
 	CardList            []*CardInfo          // 角色拥有的卡牌
 	LatestArea          string               // 上一次的最新登录的区   区的url：ip+port
-	ItemList            []*ItemSt            // 背包里的道具
+	//ItemList            []*ItemData            // 背包里的道具
+	ItemList            []*ItemData            // 背包里的道具
 	EquipData           *EquipData           // 背包里的的装备道具
 	ChannelId           int                  // 渠道Id
 	ServerList          []*ServerList        // 整个游戏的所有区列表，从上线开始  1-30  29 数据更新操作
 	ChapterInfo         *ChapterInfo         // 当前章节+当前关卡
-	ClearanceDuplicates map[int]bool         //通关副本
-	CollegesInfo        map[int]*CollegeInfo //学院信息
-	GradeInfo           *GradeInfo           //评级信息
+	ClearanceDuplicates map[int]bool         // 通关副本
+	CollegesInfo        map[int]*CollegeInfo // 学院信息
+	GradeInfo           *GradeInfo           // 评级信息
 	RegisterTime        int64                // 玩家注册角色时间
 }
 
@@ -110,9 +111,10 @@ type ItemSt struct {
 
 // 道具数据
 type ItemData struct {
-	Uid     int64 // 唯一ID
-	ItemId  int
-	ItemNum int64 // 道具的数量
+	ItemUid   int64 // 唯一ID
+	ItemId    int
+	ItemType  int
+	ItemNum   int64 // 道具的数量
 }
 
 // 数据库 存储道具的结构
