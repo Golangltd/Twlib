@@ -2,20 +2,20 @@ package twlib_user
 
 // 玩家结构
 type UserSt struct {
-	RoleUid             int64                //可用作学号
-	RoleName            string               //角色名字
-	RoleAvatar          int                  //角色头像
-	RoleLev             int                  //角色等级
-	RoleSex             int                  //角色性别
-	RoleExp             int                  // 巫师经验
-	Coin                int64                // 金币
-	Diamond             int64                // 砖石
-	TotalPower          int                  // 总战力
-	Association         string               // 协会
-	CardList            []*CardInfo          // 角色拥有的卡牌
-	LatestArea          string               // 上一次的最新登录的区   区的url：ip+port
+	RoleUid     int64       //可用作学号
+	RoleName    string      //角色名字
+	RoleAvatar  int         //角色头像
+	RoleLev     int         //角色等级
+	RoleSex     int         //角色性别
+	RoleExp     int         // 巫师经验
+	Coin        int64       // 金币
+	Diamond     int64       // 砖石
+	TotalPower  int         // 总战力
+	Association string      // 协会
+	CardList    []*CardInfo // 角色拥有的卡牌
+	LatestArea  string      // 上一次的最新登录的区   区的url：ip+port
 	//ItemList            []*ItemData            // 背包里的道具
-	ItemList            []*ItemData            // 背包里的道具
+	ItemList            []*ItemData          // 背包里的道具
 	EquipData           *EquipData           // 背包里的的装备道具
 	ChannelId           int                  // 渠道Id
 	ServerList          []*ServerList        // 整个游戏的所有区列表，从上线开始  1-30  29 数据更新操作
@@ -111,10 +111,10 @@ type ItemSt struct {
 
 // 道具数据
 type ItemData struct {
-	ItemUid   int64 // 唯一ID
-	ItemId    int
-	ItemType  int
-	ItemNum   int64 // 道具的数量
+	ItemUid  int64 // 唯一ID
+	ItemId   int
+	ItemType int
+	ItemNum  int64 // 道具的数量
 }
 
 // 数据库 存储道具的结构
@@ -152,6 +152,7 @@ type AttributeSt struct {
 	HPPower      uint64 // 血量
 	AttackPower  uint64 // 攻击力
 	DefensePower uint64 // 防御力
+	MagicPower   uint64 // 魔法防御力量
 }
 
 // 技能
