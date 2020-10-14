@@ -8,7 +8,8 @@ const (
 type S2CSSendTemplateMailToPlayerMsg struct {
 	Protocol       int
 	Protocol2      int
-	OpenID         string
+	OpenID         string // 有值表示发送在线邮件,无值表示发送离线邮件
+	UID            int64
 	MailTemplateID int
 }
 
