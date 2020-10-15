@@ -142,6 +142,7 @@ type CardInfo struct {
 	Skills        []*SkillInfo // 技能列表
 	Equips        []*EquipSt   // 卡牌的装备
 	AttributeInfo *AttributeSt // 战斗力
+	Quality       int          // 品质
 	Stars         int          // 星级
 	IsShow        bool         // 图鉴系统，false:没有打开过图鉴系统；true:打开过图鉴系统
 }
