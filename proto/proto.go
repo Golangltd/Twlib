@@ -23,3 +23,9 @@ type GameProto64 struct {
 	ProtoVer  string // 协议版本
 }
 
+// 错误处理
+type GameError struct {
+	Protocol  int
+	Protocol2 int
+	ErrorCode int
+}
