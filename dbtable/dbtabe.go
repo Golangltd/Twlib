@@ -46,6 +46,7 @@ const (
 	Gl_wse_wsjyb    = "gl_wse_wsjyb"
 	gl_xj_xjkcb     = "gl_xj_xjkcb"
 	Gl_xj_xjpzb     = "gl_xj_xjpzb"
+	Gl_xj_xjslpzb   = "gl_xj_xjslpzb"
 	Gl_xm_sjxmb     = "gl_xm_sjxmb"
 	gl_yj_yjpzb     = "gl_yj_yjpzb"
 	Gl_zb_zbb       = "gl_zb_zbb" // 装备表
@@ -59,13 +60,15 @@ const (
 	// 获取活动
 	Gl_Activity = "gl_yy_yyhdzb" // 活动配置表
 
-	Gl_School = "gl_xy_xypzb"        // 学院配置表
+	Gl_School     = "gl_xy_xypzb" // 学院配置表
 	Gl_SchoolRool = "gl_xj_xjpzb"
 )
 
 // 获取对应宏对应的表名
 func GetDbTableEnum(table string) string {
 	switch table {
+	case Gl_xj_xjslpzb:
+		return Gl_xj_xjslpzb
 	case Gl_gn_gnkqpzb:
 		return Gl_gn_gnkqpzb
 	case Gl_gn_gntjlxb:

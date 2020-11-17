@@ -1,35 +1,51 @@
 package twlib_user
 
+type CollegeType = int //学院类型
+
 // 玩家结构
 type UserSt struct {
-	RoleUid     int64       //可用作学号
-	RoleName    string      //角色名字
-	RoleAvatar  int         //角色头像
-	RoleLev     int         //角色等级
-	RoleSex     int         //角色性别
-	RoleExp     int         // 巫师经验
-	Coin        int64       // 金币
-	Diamond     int64       // 砖石
-	TotalPower  int         // 总战力
-	Association string      // 协会
-	CardList    []*CardInfo // 角色拥有的卡牌
-	LatestArea  string      // 上一次的最新登录的区   区的url：ip+port
-	//ItemList            []*ItemData            // 背包里的道具
-	ItemList            []*ItemData          // 背包里的道具
-	EquipData           *EquipData           // 背包里的的装备道具
-	ChannelId           int                  // 渠道Id
-	ServerList          []*ServerList        // 整个游戏的所有区列表，从上线开始  1-30  29 数据更新操作
-	ChapterInfo         *ChapterInfo         // 当前章节+当前关卡
-	ClearanceDuplicates map[int]bool         // 通关副本
-	CollegesInfo        map[int]*CollegeInfo // 学院信息
-	GradeInfo           *GradeInfo           // 评级信息
-	RegisterTime        int64                // 玩家注册角色时间
+	RoleUid             int64                        //可用作学号
+	RoleName            string                       //角色名字
+	RoleAvatar          int                          //角色头像
+	RoleLev             int                          //角色等级
+	RoleSex             int                          //角色性别
+	RoleExp             int                          // 巫师经验
+	Coin                int64                        // 金币
+	Diamond             int64                        // 砖石
+	TotalPower          int                          // 总战力
+	Association         string                       // 协会
+	CardList            []*CardInfo                  // 角色拥有的卡牌
+	LatestArea          string                       // 上一次的最新登录的区   区的url：ip+port
+	ItemList            []*ItemData                  // 背包里的道具
+	EquipData           *EquipData                   // 背包里的的装备道具
+	ChannelId           int                          // 渠道Id
+	ServerList          []*ServerList                // 整个游戏的所有区列表，从上线开始  1-30  29 数据更新操作
+	ChapterInfo         *ChapterInfo                 // 当前章节+当前关卡
+	ClearanceDuplicates map[int]bool                 // 通关副本
+	CollegesInfo        map[CollegeType]*CollegeInfo // 学院信息
+	RegisterTime        int64                        // 玩家注册角色时间
+	UserShop            map[string]*UserShop         // 商品信息
+
 }
 
-//updateLV: 更新的等级 nameText(学籍关联的文本)
-func (m *UserSt) UpdateGradeInfo(updateLV int, nameText int) {
-	m.RoleExp = 0 //升级之后经验置为0
-	m.GradeInfo.UpdateGradeInfo(updateLV, nameText)
+//通过学院ID获取学院信息
+func (m *UserSt) GetCollegeInfoByCollegeID(collegeID int) (result *CollegeInfo) {
+	for _, collegeInfo := range m.CollegesInfo {
+		if collegeInfo.CollegeID == collegeID {
+			result = collegeInfo
+			break
+		}
+	}
+	return
+}
+
+/*
+角色升级
+updateLV: 更新的等级
+*/
+func (m *UserSt) RoleUpgrade(updateLV int) {
+	m.RoleExp = 0        //升级之后经验置为0
+	m.RoleLev = updateLV //升级之后的角色等级
 }
 
 //power:战斗力
@@ -62,6 +78,8 @@ const (
 	ItemCommon      // ItemCommon ==  1 常规道具
 	ItemEquipment   // ItemEquipment == 2 装备
 	ItemCard        // ItemCard  == 3 卡牌
+	ItemFashions    // ItemFashions ==  4 时装
+	ItemWand        // ItemWand == 5 魔杖
 )
 
 // 道具子类型，客户端类型
@@ -136,8 +154,8 @@ type UserInfo struct {
 
 // 卡牌信息结构
 type CardInfo struct {
-	CardUid       uint64       // 数据库唯一Id
-	CardID        uint64       // 卡牌ID
+	CardUid       int64        // 数据库唯一Id
+	CardID        int          // 卡牌ID
 	Level         int          // 卡牌等级
 	Skills        []*SkillInfo // 技能列表
 	Equips        []*EquipSt   // 卡牌的装备
