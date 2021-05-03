@@ -6,7 +6,7 @@ type CollegeType = int //学院类型
 type UserSt struct {
 	RoleUid             int64                        //可用作学号
 	RoleName            string                       //角色名字
-	RoleAvatar          int                          //角色头像
+	RoleAvatar          string                          //角色头像
 	RoleLev             int                          //角色等级
 	RoleSex             int                          //角色性别
 	RoleExp             int                          // 巫师经验
